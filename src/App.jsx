@@ -1,10 +1,13 @@
+import Converter from "../features/Converter"
+
 function App() {
 
   return (
-    <div>
-
-    </div>
+    <> 
+    <Converter/>
+    </>
   )
+  
 }
 
 export default App
