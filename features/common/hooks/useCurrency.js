@@ -8,18 +8,25 @@ export const useCurrency = () => {
     const [currencyTwo, setCurrencyTwo] = useState("EUR");
 
     const [ratesData, symbolsData] = useQueries({
-        queries:[
+        queries: [
         {
         queryKey:["rates", currencyOne],
         queryFn: () => fetchRates(currencyOne),
-        staleTime: Infinity
+        staleTime: Infinity,
+        select: ({rates,date,timestamp}) => {
+            return {rates,date,timestamp};
+        }
     },
     {
         queryKey: ['symbols'],
         queryFn: () => fetchSymbols,
-        staleTime: Infinity
+        staleTime: Infinity,
+        select: ({symbols}) => symbols
     }
-]});
+]
+});
+
+    console.log(ratesData);
 
     return { amount, currencyOne, currencyTwo};
 };
