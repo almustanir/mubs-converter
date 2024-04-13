@@ -3,6 +3,7 @@ import { useCurrency } from "../common/hooks/useCurrency";
 import ConverterHeader from "./components/ConverterHeader/ConverterHeader";
 import ConverterOption from "./components/ConverterOption";
 import ConverterInput from "./components/ConverterInput";
+import ConverterDisplay from "./components/ConverterDisplay";
 
 const Converter = () => {
   const {
@@ -40,15 +41,29 @@ const Converter = () => {
       />
     );
   return (
-    <Box width={{base: "90vw", sm: "45vw" }} margin="0 auto">
-      <ConverterHeader/>
-      <ConverterOption symbol={symbolsData.data} currencyList={currencyList} onCurrencyChange={setCurrencyOne}
+    <Box width={{ base: "90vw", sm: "45vw" }} margin="0 auto">
+      <ConverterHeader />
+      <ConverterOption
+        symbol={symbolsData.data}
+        currencyList={currencyList}
+        onCurrencyChange={setCurrencyOne}
         currency={currencyOne}
       />
-      <ConverterOption symbol={symbolsData.data} currencyList={currencyList} onCurrencyChange={setCurrencyTwo}
+      <ConverterOption
+        symbol={symbolsData.data}
+        currencyList={currencyList}
+        onCurrencyChange={setCurrencyTwo}
         currency={currencyTwo}
       />
-      <ConverterInput value={amount} onAmountChange={setAmount}/>
+      <ConverterInput value={amount} onAmountChange={setAmount} />
+      <ConverterDisplay
+        amount={amount}
+        currencyOne={currencyOne}
+        currencyTwo={currencyTwo}
+        convertedAmount={convertedAmount}
+        date={date}
+        time={time}
+      />
     </Box>
   );
 };

@@ -1,8 +1,25 @@
-const ConverterDisplay = () => {
+import {Box, Text} from "@chakra-ui/react"
+
+const ConverterDisplay = ({
+    amount,
+    currencyOne,
+    currencyTwo,
+    convertedAmount,
+    date,
+    time
+}) => {
   return (
-    <>
-        <>TEST</>
-    </>
+    <Box textAlign='right'>
+        <Text fontSize='lg' fontWeight='bold'>
+            {amount}
+            {currencyOne}
+        </Text>
+        <Text fontSize='2xl' fontWeight='bold' color='purple.500'>
+            {convertedAmount}
+            {currencyTwo}
+        </Text>
+        <Text fontSize='xs' color='gray.400'>Market rates Collected - {date} {time} </Text>
+    </Box>
   )
 }
 
