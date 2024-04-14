@@ -1,4 +1,4 @@
-import { Spinner, Text, Box } from "@chakra-ui/react";
+import { Spinner, Text, Box,Grid, GridItem } from "@chakra-ui/react";
 import { useCurrency } from "../common/hooks/useCurrency";
 import ConverterHeader from "./components/ConverterHeader/ConverterHeader";
 import ConverterOption from "./components/ConverterOption";
@@ -43,12 +43,18 @@ const Converter = () => {
   return (
     <Box width={{ base: "90vw", sm: "45vw" }} margin="0 auto">
       <ConverterHeader />
-      <ConverterOption
+      <Grid templateColumns='repeat(5, 1fr)' templateRows='repeat(2, 1fr)' padding={{base:'6', sm:'10'}} gap='1rem'
+      backgroundColor='white' borderRadius='lg'>
+        <GridItem colSpan={{base:5, sm:2}} justifySelf='center' alignSelf='center'>
+        <ConverterOption
         symbol={symbolsData.data}
         currencyList={currencyList}
         onCurrencyChange={setCurrencyOne}
         currency={currencyOne}
       />
+        </GridItem>
+      </Grid>
+      
       <ConverterOption
         symbol={symbolsData.data}
         currencyList={currencyList}

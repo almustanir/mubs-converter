@@ -16,6 +16,7 @@ export const useCurrency = () => {
         select: ({ rates, date, timestamp }) => {
           return { rates, date, timestamp };
         },
+        keepPreviousData: true,
       },
       {
         queryKey: ["symbols"],
