@@ -1,4 +1,4 @@
-import {RepeatIcon} from "@chakra-ui/icons";
+import { RepeatIcon } from "@chakra-ui/icons";
 import { Spinner, Text, Box, Grid, GridItem } from "@chakra-ui/react";
 import { useCurrency } from "../common/hooks/useCurrency";
 import ConverterHeader from "./components/ConverterHeader/ConverterHeader";
@@ -70,7 +70,7 @@ const Converter = () => {
           justifySelf="center"
           alignSelf="center"
         >
-          <RepeatIcon boxSize='2rem' color='purple.300'/>
+          <RepeatIcon boxSize="2rem" color="purple.300" />
         </GridItem>
         <GridItem
           colSpan={{ base: 5, sm: 2 }}
@@ -78,24 +78,30 @@ const Converter = () => {
           alignSelf="center"
         >
           <ConverterOption
-        symbol={symbolsData.data}
-        currencyList={currencyList}
-        onCurrencyChange={setCurrencyTwo}
-        currency={currencyTwo}
-      />
+            symbol={symbolsData.data}
+            currencyList={currencyList}
+            onCurrencyChange={setCurrencyTwo}
+            currency={currencyTwo}
+          />
         </GridItem>
         <GridItem colSpan={2}>
-        <ConverterInput value={amount} onAmountChange={setAmount} />
+          <ConverterInput value={amount} onAmountChange={setAmount} />
+        </GridItem>
+        <GridItem colSpan={3} justifySelf='right' alignSelf='right'>
+          <ConverterDisplay
+            amount={amount}
+            currencyOne={currencyOne}
+            currencyTwo={currencyTwo}
+            convertedAmount={convertedAmount}
+            date={date}
+            time={time}
+          />
         </GridItem>
       </Grid>
-      <ConverterDisplay
-        amount={amount}
-        currencyOne={currencyOne}
-        currencyTwo={currencyTwo}
-        convertedAmount={convertedAmount}
-        date={date}
-        time={time}
-      />
+      <Text textAlign='center' marginTop='1.5rem' color='whiteAlpha.600' fontSize='sm:'>Built with ❤️, {`<<MBTECH>>`}✅ 
+      <br/>
+      <a href="http://olajidemubarak561@gmail.com">Send Your Feedback</a>
+      </Text>
     </Box>
   );
 };
