@@ -98,9 +98,9 @@ const Converter = () => {
           />
         </GridItem>
       </Grid>
-      <Text textAlign='center' marginTop='1.5rem' color='whiteAlpha.600' fontSize='sm:'>Built with ❤️, {`<<MBTECH>>`}✅ 
+      <Text textAlign='center' marginTop='1.5rem' color='whiteAlpha.600' fontSize='sm:'>Built with ❤️, MBTECH✅ 
       <br/>
-      <a href="http://olajidemubarak561@gmail.com">Send Your Feedback</a>
+      {/* <a href="https://olajidemubarak561@gmail.com" target="_blank" ref="noopener noreferrer">Send Your Feedback</a> */}
       </Text>
     </Box>
   );
